@@ -81,6 +81,12 @@ follow the output redirection logic. If output redirection or appending output
 redirection is turned on, we used open on the *cmdObject.filename* and stored 
 the fd. Dup2 was used to change the STDOUT to fd and then closed fd. 
 
+### Appending Output Redirection
+A new member was added to the original command struct that checked if
+appending redirection is true or not. In the execution in the main, if 
+appending is true then the macros for opening the file are changed to append 
+rather than truncate.
+
 ### Piping
 #### Generic:
 To execute piping, we loop the number of pipes in the command and
@@ -103,12 +109,6 @@ which should write to the next pipe. The functions returns exit status.
 The last command is executed in a similar way that a command is executed
 with no piping. After this execution, the program continues to the front of
 the while loop.
-
-### Appending Output Redirection
-A new member was added to the original command struct that checked if
-appending redirection is true or not. In the execution in the main, if 
-appending is true then the macros for opening the file are changed to append 
-rather than truncate.
 
 ## Limitations:
 ### Background Jobs:
