@@ -1,4 +1,4 @@
-# Shell
+# SShell
 ## Summary
 
 ### No piping
@@ -63,14 +63,14 @@ piping symbol as its delimiter. Each token is extracted using strtok_r and
 passed to parseCommand which parses each command individually and assigns it
 to the *cmdObjects* array.
 
-### Built-in Commands
+## Built-in Commands
 In the case that the user inputs one of the three build in commands "pwd", "cd",
 and "exit" the code manually executes these commands. If the input is pwd
 then the code uses getcwd() function to get the current directory. If the input
 is cd then the chdir() function is used to  change directory. Exit is implemented
 by breaking the while loop.
 
-### Output Redirection
+## Output Redirection
 The *parseCommand* method checks for the occurrence of any output redirection
 sign. Then the function tokenizes into parts: command before the sign and
 the filename after. The command before the sign (after being parsed like a
@@ -87,8 +87,8 @@ appending redirection is true or not. In the execution in the main, if
 appending is true then the macros for opening the file are changed to append 
 rather than truncate.
 
-### Piping
-#### Generic:
+## Piping
+### Generic:
 To execute piping, we loop the number of pipes in the command and
 in exception of the last command each command individually with the
 help of the *executePipeCommand* function. For each iteration of the pipe we
@@ -97,7 +97,7 @@ first create the pipe by calling the pipe function. Then the
 specifies which read pipe the stdin should point for each command. The parameter
 'i' is used to specify the ith command in the *cmdObjects* array.
 
-#### Inside the executePipeCommand function
+### Inside the executePipeCommand function
 First this function creates a parent and child process. The child process
 uses dup2 to change STDIN and STDOUT to point to the right directory. If
 inputRead is zero (the first command), then there's no need to change the fd to 
@@ -105,7 +105,7 @@ zero. However, if it is anything else (not the first command) then the stdin
 needs to point to the read of the previous pipe. Similar is true for the fd[1] 
 which should write to the next pipe. The functions returns exit status.
 
-#### Last command:
+### Last command:
 The last command is executed in a similar way that a command is executed
 with no piping. After this execution, the program continues to the front of
 the while loop.
