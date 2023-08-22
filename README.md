@@ -56,23 +56,21 @@ is initialized to members inside cmdObj. If there is no output redirection. then
 *firstoken* which contains a copy of *cmd*, parses the command with white space.
 The last element in the argv array is then set to null for the execvp call.
 
-### 'parsePipes' implementation:
+### *parsePipes* implementation:
 This function accepts an array of struct command pointer objects ('cmdObjects')
 and the original command ('cmd'). The function parses the array with the
 piping symbol as its delimiter. Each token is extracted using strtok_r and
 passed to parseCommand which parses each command individually and assigns it
 to the *cmdObjects* array.
 
-## Phase Implementations:
-
-### Phase 3: How our code implements the build in commands
+### Built-in Commands
 In the case that the user inputs one of the three build in commands "pwd", "cd",
 and "exit" the code manually executes these commands. If the input is pwd
 then the code uses getcwd() function to get the current directory. If the input
 is cd then the chdir() function is used to  change directory. Exit is implemented
 by breaking the while loop.
 
-### Phase 4: How our code implements output redirection
+### Output Redirection
 The *parseCommand* method checks for the occurrence of any output redirection
 sign. Then the function tokenizes into parts: command before the sign and
 the filename after. The command before the sign (after being parsed like a
@@ -83,7 +81,7 @@ follow the output redirection logic. If output redirection or appending output
 redirection is turned on, we used open on the *cmdObject.filename* and stored 
 the fd. Dup2 was used to change the STDOUT to fd and then closed fd. 
 
-### Phase 5: How are code implements piping
+### Piping
 #### Generic:
 To execute piping, we loop the number of pipes in the command and
 in exception of the last command each command individually with the
@@ -106,7 +104,7 @@ The last command is executed in a similar way that a command is executed
 with no piping. After this execution, the program continues to the front of
 the while loop.
 
-### Phase 6: How we implement output appending
+### Appending Output Redirection
 A new member was added to the original command struct that checked if
 appending redirection is true or not. In the execution in the main, if 
 appending is true then the macros for opening the file are changed to append 
@@ -119,14 +117,7 @@ attempt was made to implement background jobs however the trials failed to
 print out the completion messages in order. Attempts were made to use
 waitpid with WNOHANG and various structs but none passed the cases.
 
-### Failure of library function error management:
-The code does not explicitly check for library function errors, however the
-program does throw errors in the case certain function (eg. malloc) fail.
-
-## Source
-
-https://codeforwin.org/c-programming/c-program-to-trim-both-leading-and-trailing
--white-spaces-in-string
+## Sources
 
 https://www.educative.io/answers/splitting-a-string-using-strtok-in-c
 
