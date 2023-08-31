@@ -114,8 +114,7 @@ the while loop.
 ### Background Jobs:
 The biggest limitation is that the program implements no background jobs. An
 attempt was made to implement background jobs however the trials failed to
-print out the completion messages in order. Attempts were made to use
-waitpid with WNOHANG and various structs but none passed the cases.
+print out the completion messages in order. 
 
 ## Sources
 
