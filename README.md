@@ -1,7 +1,7 @@
 # Custom C Linux Shell
 ## Summary
-This is a custom C shell program that allows users to interact with their computer using a shell-like interface. It provides standard shell functionality and includes features such as output redirection and 
-piping of up to four commands.
+This is a custom C shell program that allows users to interact with their computer using a shell-like interface. It provides standard shell 
+functionality and includes features such as output redirection and  piping of up to four commands.
 
 ## Features 
 
