@@ -11,8 +11,7 @@ This custom shell supports all standard linux shell commands like ls, cs, pwd, e
 This shell allows users to redirect the standard output to a file of the user's choosing.
 ### Piping:   
 Users can chain up to four commands together using piping.  
-
-  
+### Usage:  
 All of these features can be seen from the demo on my [portfolio](https://ajaytalanki.github.io/portfolio/).
 
 ## Limitations  
