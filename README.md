@@ -7,9 +7,12 @@ piping of up to four commands.
 ### Standard Shell Commands:  
 This custom shell supports all standard linux shell commands like ls, cs, pwd, echo, and many more. 
 ### Output Redirection:   
-This shell allows users to redirect the standard output to a file of the user's choosing
+This shell allows users to redirect the standard output to a file of the user's choosing.
 ### Piping:   
-Users can chain up to four commands together using piping
+Users can chain up to four commands together using piping.
+
+## Usage
+The usage of these features can be seen from the demo on my [portflio](https://ajaytalanki.github.io/portfolio/).
 
 ## Limitations:
 ### Background Jobs:
