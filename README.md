@@ -1,4 +1,5 @@
 # Custom C Linux Shell
+## Summary
 This is a custom C shell program that allows users to interact with their computer using a shell-like interface. It provides standard shell functionality and includes features such as output redirection and 
 piping of up to four commands.
 
@@ -14,7 +15,7 @@ Users can chain up to four commands together using piping.
 ## Usage
 The usage of these features can be seen from the demo on my [portfolio](https://ajaytalanki.github.io/portfolio/).
 
-## Limitations:
+## Limitations
 ### Background Jobs:
 The biggest limitation is that the program implements no background jobs. An
 attempt was made to implement background jobs however the trials failed to
