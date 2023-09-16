@@ -16,6 +16,4 @@ All of these features can be seen from the demo on my [portfolio](https://ajayta
 
 ## Limitations  
 ### Background Jobs:
-The biggest limitation is that the program implements no background jobs. An
-attempt was made to implement background jobs however the trials failed to
-print out the completion messages in order. 
+The biggest limitation is that the program doesn't background jobs.
